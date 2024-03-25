@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, SafeAreaView, StatusBar, Pressable, ScrollView, FlatList, Linking } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, StatusBar, ScrollView, FlatList} from 'react-native';
 import React from "react";
 import Card from "../components/BookList"
 import BookData from "../json/books.json"
@@ -12,7 +12,9 @@ const BookScreen = ({ navigation }) => {
             backgroundColor={'white'}
             barStyle={'dark-content'} />
           <ScrollView>
+            
             <Text style={styles.title}>Popular Books</Text>
+            
             <Box style={styles.flatstyle}>
               <FlatList
                 data={BookData.Popular}
@@ -21,7 +23,9 @@ const BookScreen = ({ navigation }) => {
                 horizontal={true}
                 />
             </Box>
+
             <Text style={styles.title}>Newest</Text>
+            
             <Box style={styles.flatstyle}>
               <FlatList
                 data={BookData.Newest}
@@ -42,41 +46,39 @@ const styles = StyleSheet.create({
       height: 56,
       padding: 8,
       justifyContent: 'space-between',
-      flexDirection: 'row',
+      flexDirection: 'row'
       
-    },
-    pressableStyle: {
-      width: 40,
-      height: 40,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
     },
     title: {
       marginTop: 20,
       marginHorizontal: 20,
       fontSize: 24,
-      fontWeight: '500',
+      fontWeight: '500'
     },
     flatstyle: {
       marginHorizontal: 10,
       marginTop: 20
     },
+    pressableStyle: {
+      width: 40,
+      height: 40,
+      backgroundColor: '#fff',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
     pagepart: {
-      //backgroundColor: 'red',
       height: 56,
-      flexDirection: 'row',
       alignItems: 'center',
+      flexDirection: 'row',
       justifyContent: 'space-around',
       shadowColor: "#000",
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.2,
       marginTop: '18%',
-      // Android Only
-      elevation: 1,
+      elevation: 1
     },
     pagebutton: {
-      alignItems: 'center',
+      alignItems: 'center'
     },
     activate: {
       color: '#6200EE'
