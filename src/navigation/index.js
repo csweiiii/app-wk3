@@ -1,21 +1,18 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-import { View, StyleSheet, Pressable, Image, Text } from "react-native";
 import { Divider, useTheme } from '@rneui/themed';
-
-
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import BookScreen from '../screen/HomeScreen';
+import AccountScreen from '../screen/AccountScreen';
 import DetailScreen from '../screen/DetailScreen';
+import BookScreen from '../screen/HomeScreen';
 import Wishlist from '../screen/WishlistScreen';
 import MyBookScreen from '../screen/MybooksScreen';
-import AccountScreen from '../screen/AccountScreen';
 import SettingScreen from '../screen/SettingScreen';
-
 import active from "../../icon/icon_bookmark_actived.png"
 import inactive from "../../icon/icon_bookmark.png"
 
@@ -28,7 +25,7 @@ var isPressed = false;
 const Navigation = () => {
     return (
         <NavigationContainer>
-            <MyDrawer />
+            <MyDrawer/>
         </NavigationContainer>
     );
 }
@@ -123,7 +120,6 @@ const MyTabs = () => {
                     ),
                 }}
             />
-
         </Tab.Navigator>
     );
 }
@@ -165,7 +161,7 @@ const HomeTitle = ({ navigation }) => {
                 <Image source={require("../../icon/nav_icon.png")} />
             </Pressable>
             <Pressable style={styles.pressableStyle}>
-                <Image source={require("../image/search_icon.png")} />
+                <Image source={require("../../icon/search_icon.png")} />
             </Pressable>
         </View>
     );
@@ -189,8 +185,6 @@ const DetailTitle = () => {
 }
 
 const StackNavigator = ({ navigation }) => {
-
-
     return (
         <Stack.Navigator
             screenOptions={{
@@ -207,8 +201,7 @@ const StackNavigator = ({ navigation }) => {
                 component={DetailScreen}
                 options={{
                     headerTitle: () => <DetailTitle />,
-                    headerBackImageSource: require("../../icon/icon_back.png")
-                    
+                    headerBackImageSource: require("../../icon/icon_back.png") 
                 }}
             />
         </Stack.Navigator>
@@ -225,13 +218,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         right: 16
     },
-    pressableStyle: {
-        width: 40,
-        height: 40,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     DetitleStyle: {
         backgroundColor: "#fff",
         width: '92%',
@@ -240,6 +226,13 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
         flexDirection: 'row',
     },
+    pressableStyle: {
+        width: 40,
+        height: 40,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 });
 
 export default Navigation;
