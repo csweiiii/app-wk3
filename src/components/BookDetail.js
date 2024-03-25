@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Image, StyleSheet, Text, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import filled from "../../icon/icon_star_filled.png"
 import empty from "../../icon/icon_star_empty.png"
-
 
 const img0 = require("../img/book1.png");
 const img1 = require("../img/book2.png");
@@ -38,21 +37,25 @@ const NewestDetail = ({ props , navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    liststyle: {
+        flexDirection: 'row',
+        gap: 3
+    },
     cardstyle: {
         width: 140,
         height: 278,
         justifyContent: 'space-between',
-        marginHorizontal: 10,
-    },
-    imgstyle: {
-        width: 140,
-        height: 200
+        marginHorizontal: 10
     },
     titlestyle: {
         marginTop: 7,
         fontSize: 16,
         lineHeight: 18,
         fontWeight: '500'
+    },
+    imgstyle: {
+        width: 140,
+        height: 200
     },
     writerstyle: {
         fontSize: 12,
@@ -62,10 +65,6 @@ const styles = StyleSheet.create({
     },
     starstyle: {
         marginTop: 15,
-    },
-    liststyle: {
-        flexDirection: 'row',
-        gap: 3
     }
 })
 

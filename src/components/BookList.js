@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, StyleSheet, Text, Pressable } from "react-native";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 const img0 = require("../img/book1.png");
 const img1 = require("../img/book2.png");
 const img2 = require("../img/book3.png");
